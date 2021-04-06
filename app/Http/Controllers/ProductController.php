@@ -54,10 +54,6 @@ class ProductController extends Controller
             $image->move($destinationPath, $name);
             // $this->save();
             $request['thumbnail'] = $name;
-            $image_path = public_path('upload/'.$product->thumbnail);
-            if(file_exists($image_path)) {
-            	@unlink($image_path);
-            }
         }
 
         auth()->user()->products()->create($request->all());
@@ -114,6 +110,10 @@ class ProductController extends Controller
             $image->move($destinationPath, $name);
             // $this->save();
             $request['thumbnail'] = $name;
+            $image_path = public_path('upload/'.$product->thumbnail);
+            if(file_exists($image_path)) {
+            	@unlink($image_path);
+            }
         }
         
         $product->update($request->all());
