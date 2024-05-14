@@ -24,7 +24,7 @@ Route::get('/clear', function () {
 });
 
 Route::get('/', function () {
-	$products = Product::paginate(10);
+	$products = Product::wherePublish(true)->paginate(10);
     return view('index', compact('products'));
 })->name('index');
 
