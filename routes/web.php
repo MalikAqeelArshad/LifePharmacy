@@ -20,7 +20,7 @@ use App\Http\Controllers\CheckoutController;
 Route::get('/clear', function () {
 	// Artisan::call('migrate', ["--force"=> true ]);
 	Artisan::call('optimize:clear'); // clear everything e.g. cache
-	Artisan::call('optimize:clear'); // clear everything e.g. cache
+	Artisan::call('optimize'); // clear everything e.g. cache
 	return 'Compiled views cleared! <br> Application cache cleared! <br> Route cache cleared! <br> Configuration cache cleared! <br> Compiled services and packages files removed! <br> Caches cleared successfully!';
 });
 
